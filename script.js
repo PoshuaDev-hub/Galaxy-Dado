@@ -18,7 +18,6 @@ function prepareDice(type, faces) {
     // Activar botón en el Dock
     document.querySelectorAll('.dock-item').forEach(btn => {
         btn.classList.remove('active');
-        // Usamos una forma más segura de detectar el click en móvil
         if(btn.getAttribute('onclick').includes(type)) btn.classList.add('active');
     });
 
@@ -26,12 +25,15 @@ function prepareDice(type, faces) {
     display.classList.remove('pulse-hit'); 
     
     setTimeout(() => {
-        // Forzamos el renderizado del SVG
+        // LIMPIEZA DE CLASES Y RENDERIZADO CON OVERFLOW VISIBLE
+        display.className = 'dice-unit-svg ' + type; 
+        
         display.innerHTML = `
-            <svg viewBox="0 0 100 100" style="width:100%; height:100%;">
+            <svg viewBox="0 0 100 100" style="width:100%; height:100%; overflow:visible;">
                 ${svgShapes[type]}
             </svg>
         `;
+
         resultText.innerText = "";
         currentFaces = faces;
         display.classList.add('show');
@@ -57,13 +59,14 @@ document.getElementById('main-stage').addEventListener('click', () => {
         
         display.classList.remove('rolling');
         
+        // AJUSTE ÓPTICO PARA EL D4
         if (currentFaces === 4) {
             resultText.style.transform = 'translateY(12px)'; 
         } else {
             resultText.style.transform = 'translateY(0px)';
         }
 
-        // --- VIBRACIÓN MEJORADA ---
+        // VIBRACIÓN HÁPTICA
         if ("vibrate" in navigator) {
             navigator.vibrate(50); 
         }

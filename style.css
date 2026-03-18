@@ -104,8 +104,9 @@ header h1 { font-family: 'Orbitron'; letter-spacing: 8px; font-size: 1.2rem; col
 .d10-icon { clip-path: polygon(50% 0%, 100% 35%, 82% 100%, 18% 100%, 0% 35%); }
 
 .dock-item.active { opacity: 1; }
-.dock-item.active .shape-icon { background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+.dock-item.active .shape-icon { background: var(--accent); filter: drop-shadow(0 0 8px var(--accent)); transform: scale(1.1); }
 .dock-item.active span { color: var(--accent); }
+.d6-icon { border-radius: 6px; }
 
 #hint { font-size: 0.6rem; margin-top: 30px; letter-spacing: 4px; opacity: 0.5; text-align: center; }
 
