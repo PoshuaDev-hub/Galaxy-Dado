@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALAXY DADO | Proyecto FrioFort</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="space-bg"></div>
+    
+    <div class="app-wrapper">
+        <header>
+            <h1 class="brand">GALAXY DADO</h1>
+            <div class="status-bar">
+                <span class="dot"></span> SISTEMA DE DADO // RESULTADOS VECTORIALES
+            </div>
+        </header>
+
+        <section class="viewport" id="main-stage">
+            <div class="black-hole">
+                <div class="ring"></div>
+                <div id="dice-display" class="dice-unit-svg"></div>
+                <div id="result-text"></div>
+            </div>
+            <p id="hint" class="hidden">TAP Y LANZA</p>
+        </section>
+
+        <nav class="dock">
+            <button class="dock-item" onclick="prepareDice('d4', 4)">
+                <div class="shape-icon d4-icon"></div>
+                <span>DADO 4</span>
+            </button>
+            <button class="dock-item" onclick="prepareDice('d6', 6)">
+                <div class="shape-icon d6-icon"></div>
+                <span>DADO 6</span>
+            </button>
+            <button class="dock-item" onclick="prepareDice('d8', 8)">
+                <div class="shape-icon d8-icon"></div>
+                <span>DADO 8</span>
+            </button>
+            <button class="dock-item" onclick="prepareDice('d10', 10)">
+                <div class="shape-icon d10-icon"></div>
+                <span>DADO 10</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
